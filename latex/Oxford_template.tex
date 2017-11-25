@@ -1,0 +1,130 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[t,compress,hyperref={colorlinks,linkcolor=OxfordBlue,urlcolor=OxfordBlue},dvipdfm]{beamer}
+\usepackage{beamerthemesplit}
+
+%佈景主設定
+\usecolortheme{whale}
+\usecolortheme{orchid}
+\useoutertheme[footline=authortitle]{miniframes}
+
+% 另外一種佈景型式
+%\useoutertheme{infolines}
+
+\definecolor{OxfordBlue}{RGB}{0,33,71}
+\definecolor{OxfordMidBlue}{RGB}{75,146,219}
+\definecolor{OxfordPastelBlue}{RGB}{197,210,224}
+\definecolor{OxfordGreen}{RGB}{0,87,81}
+\definecolor{OxfordPastelGreen}{RGB}{190,197,194}
+\definecolor{OxfordOlive}{RGB}{136,123,27}
+\definecolor{OxfordMidOlive}{RGB}{194,176,0}
+\definecolor{OxfordPastelOlive}{RGB}{225,222,174}
+\definecolor{OxfordRed}{RGB}{130,36,51}
+\definecolor{OxfordMidRed}{RGB}{219,77,105}
+\definecolor{OxfordPastelRed}{RGB}{223,197,203}
+\definecolor{OxfordTan}{RGB}{120,35,39}
+\definecolor{OxfordMidTan}{RGB}{225,163,88}
+\definecolor{OxfordPastelTan}{RGB}{241,227,187}
+
+
+\setbeamercolor{palette primary}{bg=OxfordBlue}
+\setbeamercolor{palette secondary}{bg=black}
+\setbeamercolor{structure}{fg=OxfordRed}
+\setbeamercolor{frametitle}{fg=OxfordOlive,bg=white}
+\setbeamercolor{section in head/foot}{parent=palette secondary}
+\setbeamercolor{subsection in head/foot}{parent=palette primary}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+\setbeamercolor{pagenumber in head/foot}{parent=section in head/foot}
+\setbeamercolor{navigation symbols}{fg=OxfordPastelOlive}
+
+\setbeamercolor{block title}{bg=OxfordRed!90}
+\setbeamercolor{block body}{bg=OxfordPastelRed!20}
+
+\newcommand{\jj}{\vskip2ex}
+\newcommand{\kk}{\vskip-2ex}
+\newcommand{\from}{\leftarrow}
+\newcommand{\us}{\underline{~}}
+\newcommand{\nil}{[\kern1pt]}
+\newcommand{\listr}[1]{[\,#1\,]}
+\newcommand{\reason}[1]{\quad\{\,\text{#1}\,\}}
+\newcommand{\conv}{\text{\u{}}}
+
+
+% 字型設定
+\usepackage{fontspec}
+\mode<presentation>{%
+\newfontinstance\chfont{DFHeiStd-W5}
+\newcommand{\chf}[1]{{\chfont #1}}          % 使用\chf{} 即可使用中文
+}
+
+\mode<article>{%
+\newfontinstance\chfont{DFMingStd-W5}
+\newcommand{\chf}[1]{{\chfont #1}}          % 使用\chf{} 即可使用中文
+}
+
+% 整體文件設定
+\linespread{1.10}    % 行距為原來的1.10倍
+
+\title{Java Technicalities}
+\subtitle{From a C/C\raisebox{0.7pt}{++} Programmer's View}
+\author{yen3}
+\institute{\chf{長庚大學資訊工程學系}}
+\date{April 8, 2009}
+
+\begin{document}
+\setbeamertemplate{frametitle}
+{\vskip.15cm
+\hbox{\begin{beamercolorbox}[wd=\paperwidth,sep=.5cm]{frametitle}\usebeamerfont{frametitle}\insertframetitle\end{beamercolorbox}}\vskip-.45cm
+}
+
+\setbeamertemplate{footline}
+{%
+\leavevmode%
+\hbox{\begin{beamercolorbox}[wd=.6\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fill]{title in head/foot}%
+\usebeamerfont{title in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.4\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm]{pagenumber in head/foot}%
+\usebeamerfont{pagenumber in head/foot}\hfill\insertframenumber/\inserttotalframenumber
+\end{beamercolorbox}}%
+\vskip0pt%
+}
+
+
+\frame{\titlepage}
+
+\section{About}
+\begin{frame}
+    \frametitle{About Author}
+    \begin{itemize}
+        \item Computer Science Student
+        \item Blog: \href{http://yen3rc.blogspot.com}{\underline{No title, no thinking, no meaning}}
+        \item E-mail: yen3rc \chf{在} gmail \chf{答康}
+        \item \chf{隨手書寫生活}
+        \item C, C\raisebox{0.7pt}{++}, Java, Haskell, \LaTeX
+    \end{itemize}
+\end{frame}
+
+\section[Outline]{}
+\frame{\tableofcontents}
+
+\begin{frame}
+    \frametitle{About Slide}
+    \begin{itemize}
+        \item \chf{專題程式開發介紹相關簡報第二彈，陸續有其他介紹}
+        \item \chf{感謝\href{http://www.csie.cgu.edu.tw/~cllee/}{\underline{李春良老師}}專題指導，使得這一系列簡報得以誕生}
+        \item \chf{感謝} Josh Ko \href{http://joshkos.blogspot.com}{\underline{(Joshsoft)}} \chf{在主題與技術上的指導與協助(還有英文)} XD
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{\textwidth}
+            \begin{center}
+                {\Huge Do you have any problem ?}\\
+                I am glad you have listened the slides from start to now. XD
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}

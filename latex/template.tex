@@ -1,0 +1,77 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt, fleqn]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1.5cm, bottom=2.3cm]{geometry}
+
+\usepackage{fontspec}
+\usepackage{listings}
+
+%% 圖片引用相關設定
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+%% 使用xCJK設定中文環境
+\usepackage{xCJK}
+\usepackage{CJKspace}
+\setCJKmainfont[ItalicFont={DFHeiStd-W7}, BoldFont={DFHeiStd-W7}]{DFMingStd-W5}
+%\setCJKfamilyfont{Japanese}{ヒラギノ角ゴ Pro W3}
+
+%% 以下調整字距
+\renewcommand\CJKglue{\hskip -0.3pt plus 0.08\baselineskip}
+%% 以下調整行距，兩者 latex2html 皆不支援。
+\linespread{1.2}
+%% 以下表示各段落不縮排
+\parindent=0pt
+%% 縮小 quote 為正常行距，並使用較小字體
+\renewenvironment{quote}
+  {\list{}{\topsep 0ex\parsep 0ex\setlength\leftmargin{1.5em}%
+           \rightmargin\leftmargin}\item\relax\linespread{1.0}\small}%
+  {\endlist}
+
+%% 由於把行距加大，要把腳注的行距縮成預設的，這個設定採自吳聰敏教授的
+%% 《cwTeX 排版系統》修訂二版一書，頁 143。
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\oldfootnote{\renewcommand\baselinestretch{1.0}%
+\large\footnotesize\ignorespaces#1}}
+\addtolength{\footnotesep}{3pt}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt 
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{}
+    \title{\textbf{軟體的特性為何}}
+    \author{efang}
+    \date{\today}
+    \maketitle
+
+
+\begin{lstlisting}[title={hello.cpp}, frameround=tfff, columns=fullflexible, numberstyle=\tiny,stepnumber=5, frame=single, basicstyle={\ttfamily \small}, numbers=left, commentstyle={\sffamily}, language=c++]
+#include <iostream>
+int main(int argc, char** argv){
+    std::cout << "Hello World" << std::endl; // print ``Hello World''
+}
+\end{lstlisting}
+
+\begin{lstlisting}[title={hello.cpp},
+                   frameround=tfff,
+                   columns=fullflexible,
+                   numberstyle=\tiny,
+                   stepnumber=5,
+                   frame=single,
+                   basicstyle={\ttfamily \small},
+                   numbers=left,
+                   commentstyle={\sffamily},
+                   language=c++]
+#include <iostream>
+int main(int argc, char** argv){
+    std::cout << "Hello World" << std::endl; // print ``Hello World''
+}
+\end{lstlisting}
+この~FAQ~リストは、よくある質問とその答を集め、役に立つようにしたもので
+
+
+\end{CJK*}
+\end{document}
